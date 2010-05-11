@@ -91,6 +91,14 @@
    </div>
 
    <div class="slide">
+      <h1>Jargon</h1>
+      <ul class="incremental">
+         <li>origin: the typical name of the remote, canonical repo.</li>
+         <li>master: what git users call trunk by default</li>
+      </ul>
+   </div>
+
+   <div class="slide">
       <h1>First</h1>
       <pre>git config --global user.name 'Arthur Axel Schmidt'
 git config --global user.email frew@gmail.com</pre>
@@ -103,16 +111,18 @@ git config --global user.email frew@gmail.com</pre>
 
    <div class="slide">
       <h1>Adding features/fixing bugs</h1>
-<pre>
-git checkout -b fix-printouts
-# hack till <strong>anything</strong> works
-git diff
-git checkin -m 'got foo to work'
-# you finished!
-git checkout master
-git merge fix-printouts
-git branch -d fix-printouts
-</pre>
+      <ul class="incremental">
+         <li><pre> # mark issue tracker ticket as in progress </pre></li>
+         <li><pre> git checkout -b fix-printouts </pre></li>
+         <li><pre> # hack till <strong>anything</strong> works </pre></li>
+         <li><pre> git diff </pre></li>
+         <li><pre> git checkin -m 'got foo to work' </pre></li>
+         <li><pre> # you finished!  </pre></li>
+         <li><pre> git checkout master </pre></li>
+         <li><pre> git merge fix-printouts </pre></li>
+         <li><pre> git branch -d fix-printouts </pre></li>
+         <li><pre> # mark issue as closed (or whatever) </pre></li>
+      </ul>
    </div>
 
    <div class="slide">
@@ -124,7 +134,7 @@ git branch -d fix-printouts
    <div class="slide">
       <h1>Start the day (update)</h1>
       <p>(I wouldn't do this if I were working on a branch)</p>
-      <p>This basically gets the changes from origin that your coworkers have checked in and merges them into your master branch</p>
+      <p>This basically gets the changes from origin that your coworkers have checked in to master and merges them into your current branch</p>
       <pre>git pull origin master</pre>
    </div>
 
@@ -136,12 +146,14 @@ git branch -d fix-printouts
 
    <div class="slide">
       <h1>File management</h1>
-      <pre>git rm filename
-git mv old new
-# also the following Just Works
-mv old new
-git rm old
-git add new</pre>
+      <ul class="incremental">
+         <li> <pre> git rm filename </pre> </li>
+         <li> <pre> git mv old new </pre> </li>
+         <li> <pre> # also the following Just Works </pre> </li>
+         <li> <pre> mv old new </pre> </li>
+         <li> <pre> git rm old </pre> </li>
+         <li> <pre> git add new </pre> </li>
+      </ul>
    </div>
 
    <div class="slide">
@@ -160,13 +172,13 @@ git add new</pre>
    <div class="slide">
       <h1>You forgot to make a branch!</h1>
       <p>It's monday and you're tired and you started to fix a bug and forgot to make a branch before you started working on it.  Never fear!  The following will get you out of the bind you are in:</p>
-      <pre>
-# hack hack hack
-git stash
-git checkout -b new-feature
-git stash apply
-# :D
-</pre>
+      <ul class="incremental">
+         <li> <pre> # hack hack hack </pre> </li>
+         <li> <pre> git stash </pre> </li>
+         <li> <pre> git checkout -b new-feature </pre> </li>
+         <li> <pre> git stash apply </pre> </li>
+         <li> <pre> # :D </pre> </li>
+      </ul>
    </div>
 
    <div class="slide">
@@ -205,7 +217,9 @@ git stash apply
       <h1>Bring changes to long running branch</h1>
       <p>If your branch lasts a long time (generally they shouldn't, but it happens,) one good way to keep up to date is to use rebase:</p>
       <pre>
-# working on branch database-refactor
+git checkout master
+git pull origin master
+git checkout database-refactor
 git rebase master
 </pre>
    <p>This will make it look like your branch has always been working on top of master</p>
@@ -215,26 +229,36 @@ git rebase master
 
    <div class="slide">
       <h1>commit only part of a file</h1>
-      <p>This <strong>probably</strong> means that you should have made a branch, but I'll still be your friend and help you out</p>
-      <pre>git add --patch</pre>
-      <p>The above command will allow you to only add parts of files to a commit.</p>
+      <ul class="incremental">
+         <li>This <strong>probably</strong> means that you should have made a branch, but I'll still be your friend and help you out</li>
+         <li><pre>git add --patch</pre></li>
+         <li>The above command will allow you to only add parts of files to a commit.</li>
+      </ul>
    </div>
 
    <div class="slide">
       <h1>Cheatsheets</h1>
-      <a href="http://zrusin.blogspot.com/2007/09/git-cheat-sheet.html">The prettiest Cheatsheet ever</a>
-      <a href="http://cheat.errtheblog.com/s/git/">A super complete (10 page) cheatsheet</a>
+      <ul>
+         <li> <a href="http://zrusin.blogspot.com/2007/09/git-cheat-sheet.html">The prettiest Cheatsheet ever</a> </li>
+         <li> <a href="http://cheat.errtheblog.com/s/git/">A super complete (10 page) cheatsheet</a> </li>
+      </ul>
    </div>
 
    <div class="slide">
       <h1>Guides</h1>
-      <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">Neat guide that takes the view that git is magic</a>
-      <a href="http://github.com/guides/Home">Lots of material collected by githubbers</a>
+      <ul>
+         <li><a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">Neat guide that takes the view that git is magic</a></li>
+         <li><a href="http://github.com/guides/Home">Lots of material collected by githubbers</a></li>
+      </ul>
    </div>
 
    <div class="slide">
       <h1>Other Tools</h1>
       <a href="http://code.google.com/p/tortoisegit/">TortoiseGit - Windows shell interface</a>
+   </div>
+
+   <div class="slide">
+      <h1>The End!</h1>
    </div>
 
 </div>

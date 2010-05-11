@@ -27,7 +27,7 @@ sup {font-size: smaller; line-height: 1px;}
 .slide pre {padding: 0; margin: 0.25em 0 0.5em 0.5em; font-size: 90%;}
 .slide pre strong { color: #f30; }
 .slide pre code {display: block;}
-.slide ul {margin-left: 5%; margin-right: 7%; list-style: disc;}
+.slide ul {list-style: none;}
 .slide li {margin-top: 0.75em; margin-right: 0;}
 .slide ul ul {line-height: 1;}
 .slide ul ul li {margin: .2em; font-size: 85%; list-style: square;}
@@ -68,6 +68,12 @@ html>body div#controls {background: transparent; position: fixed; padding: 0; to
 #slide0 h2 {font: bold italic 1em Arial, Helvetica, sans-serif; margin: 0.25em;}
 #slide0 h3 {margin-top: 1.5em; font-size: 1.5em;}
 #slide0 h4 {margin-top: 0; font-size: 1em;}
+
+.slideLast {padding-top: 3.5em; font-size: 90%;}
+.slideLast h1 {position: static; margin: 1em 0 0; padding: 0; border: none; font: bold 3em Verdana, Arial, Helvetica, sans-serif; font-variant: small-caps; white-space: normal; color: #fff; background-color: transparent;}
+.slideLast h2 {font: bold italic 1em Arial, Helvetica, sans-serif; margin: 0.25em;}
+.slideLast h3 {margin-top: 1.5em; font-size: 1.5em;}
+.slideLast h4 {margin-top: 0; font-size: 1em;}
 
 ul.urls {list-style: none; display: inline; margin: 0;}
 .urls li {display: inline; margin: 0;}
