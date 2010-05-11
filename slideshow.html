@@ -72,40 +72,33 @@
       <h1>Git</h1>
       <h3>for people at work</h3>
       <h4>and maybe people who use Windows</h4>
+      <h6>By Arthur Axel "fREW" Schmidt</h6>
+   </div>
+
+   <div class="slide">
+      <h1>DO IT.</h1>
+      <img src="img/Advice-Dog-use-git-rule-the-world.jpg" />
    </div>
 
    <div class="slide">
       <h1>Why Git?</h1>
-      <ul>
+      <ul class="incremental">
          <li>Get work done with a bad network connection</li>
          <li>Work from home</li>
          <li>Branching that works</li>
-         <li>Super fast: Save time, rule the world</li>
+         <li>Super fast: Save time, get more work done in less time, get a giant raise (1000%)</li>
       </ul>
    </div>
 
-
    <div class="slide">
-      <h1>Initial Setup</h1>
+      <h1>First</h1>
       <pre>git config --global user.name 'Arthur Axel Schmidt'
 git config --global user.email frew@gmail.com</pre>
 </div>
 
    <div class="slide">
-      <h1>Common Workflows</h1>
-   </div>
-
-   <div class="slide">
-      <h1>Inital Checkout</h1>
-      <p>The following uses SSH and your public ssh key to authenticate and get the repository.</p>
-      <pre> git clone git@<strong>server</strong>:<strong>project</strong>.git</pre>
-   </div>
-
-   <div class="slide">
-      <h1>Start the day (update)</h1>
-      <p>(I wouldn't do this if I were working on a branch)</p>
-      <p>This basically gets the changes from origin that your coworkers have checked in and merges them into your master branch</p>
-      <pre> git pull origin master</pre>
+      <h1>Common Operations</h1>
+      <p>This is basically an ordered cheatsheet of stuff that <strong>I</strong> do all the time.</p>
    </div>
 
    <div class="slide">
@@ -129,12 +122,16 @@ git branch -d fix-printouts
    </div>
 
    <div class="slide">
-      <h1>Forging your own tools</h1>
-      <p>Do you really want to type that every time?  Didn't think so.</p>
-      <p>Instead, make an executable file and put it in your path called git-sdiff and put the following in the file.</p>
-      <pre>git difftool -y -t meld</pre>
-      <p>Now you can just do</p>
-      <pre>git sdiff</pre>
+      <h1>Start the day (update)</h1>
+      <p>(I wouldn't do this if I were working on a branch)</p>
+      <p>This basically gets the changes from origin that your coworkers have checked in and merges them into your master branch</p>
+      <pre>git pull origin master</pre>
+   </div>
+
+   <div class="slide">
+      <h1>Go home</h1>
+      <p>(I wouldn't do this if I were working on a branch)</p>
+      <pre> git push origin master</pre>
    </div>
 
    <div class="slide">
@@ -148,20 +145,9 @@ git add new</pre>
    </div>
 
    <div class="slide">
-      <h1>Go home (check in to central server)</h1>
-      <p>(I wouldn't do this if I were working on a branch)</p>
-      <pre> git push origin master</pre>
-   </div>
-
-   <div class="slide">
-      <h1>Fix a typo in the last commit message</h1>
+      <h1>Fix typo in last commit message</h1>
       <pre> git commit --amend</pre>
       <p>Warning: do not do this if you have already pushed the commit to a remote server</p>
-   </div>
-
-   <div class="slide">
-      <h1>Revert changes to a file</h1>
-      <pre>rm file; git checkout file</pre>
    </div>
 
    <div class="slide">
@@ -169,24 +155,6 @@ git add new</pre>
       <p>At least once a week I make a commit that I wish I hadn't.  I may commit unfinished files with finished ones, misspell something.  Whatever.</p>
       <p>The following undoes the last commit.  You won't lose your work though, just your commit message.</p>
       <pre>git reset HEAD^</pre>
-   </div>
-
-   <div class="slide">
-      <h1>Clean up your repo at the end of the week</h1>
-      <p>Certain things you do in git accumulate cruft and will eventually degrade performance.  Fix that with the following command:</p>
-      <pre>git gc --prune</pre>
-   </div>
-
-   <div class="slide">
-      <h1>Bring in changes to long running branch</h1>
-      <p>If your branch lasts a long time (generally they shouldn't, but it happens,) one good way to keep up to date is to use rebase:</p>
-      <pre>
-# working on branch database-refactor
-git rebase master
-</pre>
-   <p>This will make it look like your branch has always been working on top of master</p>
-   <p>Warning: be careful with rebase, it can change history and make your coworkers hate you</p>
-   <p>(also: git rerere)</p>
    </div>
 
    <div class="slide">
@@ -202,7 +170,51 @@ git stash apply
    </div>
 
    <div class="slide">
-      <h1>You want to commit only part of a file</h1>
+      <h1>Inital Checkout</h1>
+      <p>The following uses SSH and your public ssh key to authenticate and get the repository.</p>
+      <pre> git clone git@<strong>server</strong>:<strong>project</strong>.git</pre>
+   </div>
+
+   <div class="slide">
+      <h1>Creating a Repository</h1>
+      <p>This just creates a local repository.  You can do this when your repo administrator is away on vacation to keep getting work done.</p>
+      <pre>git init</pre>
+   </div>
+
+   <div class="slide">
+      <h1>Forging your own tools</h1>
+      <p>Do you really want to type that every time?  Didn't think so.</p>
+      <p>Instead, make an executable file and put it in your path called git-sdiff and put the following in the file.</p>
+      <pre>git difftool -y -t meld</pre>
+      <p>Now you can just do</p>
+      <pre>git sdiff</pre>
+   </div>
+
+   <div class="slide">
+      <h1>Revert changes to a file</h1>
+      <pre>rm file; git checkout file</pre>
+   </div>
+
+   <div class="slide">
+      <h1>Clean up your repo</h1>
+      <p>Certain things you do in git accumulate cruft and will eventually degrade performance.  Fix that with the following command:</p>
+      <pre>git gc --prune</pre>
+   </div>
+
+   <div class="slide">
+      <h1>Bring changes to long running branch</h1>
+      <p>If your branch lasts a long time (generally they shouldn't, but it happens,) one good way to keep up to date is to use rebase:</p>
+      <pre>
+# working on branch database-refactor
+git rebase master
+</pre>
+   <p>This will make it look like your branch has always been working on top of master</p>
+   <p>Warning: be careful with rebase, it can change history and make your coworkers hate you</p>
+   <p>(also: git rerere)</p>
+   </div>
+
+   <div class="slide">
+      <h1>commit only part of a file</h1>
       <p>This <strong>probably</strong> means that you should have made a branch, but I'll still be your friend and help you out</p>
       <pre>git add --patch</pre>
       <p>The above command will allow you to only add parts of files to a commit.</p>
@@ -211,10 +223,12 @@ git stash apply
    <div class="slide">
       <h1>Cheatsheets</h1>
       <a href="http://zrusin.blogspot.com/2007/09/git-cheat-sheet.html">The prettiest Cheatsheet ever</a>
+      <a href="http://cheat.errtheblog.com/s/git/">A super complete (10 page) cheatsheet</a>
    </div>
 
    <div class="slide">
       <h1>Guides</h1>
+      <a href="http://www-cs-students.stanford.edu/~blynn/gitmagic/">Neat guide that takes the view that git is magic</a>
       <a href="http://github.com/guides/Home">Lots of material collected by githubbers</a>
    </div>
 
